@@ -19,13 +19,19 @@
 
 ## create training script
 code examples:
+- autoML with sklearn classifiers ([code](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_sklearn_autoML.py))
+- XGBoost
+- LGBM
+- Tensorflow
 
-
-## run training script
-    python train_sklearn.py
+## run training scripts
+    python train_sklearn_autoML.py
+    python train_xgboost.py
+    python train_lgbm.py
+    python train_tensorflow.py
     
 ## dashboard
-- open new terminal with the same environment and run the ui    
+- open new terminal with the same environment and run the ui inside project directory
      
       mlflow ui --backend-store-uri <URI>
   where \<URI\> can either be a HTTP/HTTPS URI for a remote server, or a local path to log data to a directory  
@@ -43,4 +49,4 @@ code examples:
 
         http://127.0.0.1:5000
         
-      ![ui_image](images/ui-example.png)
+      ![ui_image](images/mlflow-autoML.png)
