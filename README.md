@@ -8,6 +8,9 @@
     pip install mlflow
     pip install matplotlib
     pip install scikit-learn
+    pip install xgboost
+    pip install lightgbm
+    pip install tensorflow
 
 ## initiate project
     mkdir mlflow_quick
