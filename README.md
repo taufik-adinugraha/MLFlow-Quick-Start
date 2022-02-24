@@ -33,3 +33,11 @@ code examples:
         
         mlflow ui --backend-store-uri postgresql://URI
 - open the ui through web browser
+  - example for local path:
+        
+        http://127.0.0.1:5000
+  - example for local server
+
+        http://127.0.0.1:5000
+        
+      ![ui_image](images/ui-example.png)
