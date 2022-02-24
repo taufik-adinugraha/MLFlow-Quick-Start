@@ -50,3 +50,5 @@ code examples:
         http://127.0.0.1:5000
         
       ![ui_image](images/mlflow-autoML.png)
+      
+      ![ui_image](images/mlflow-gbt.png)
