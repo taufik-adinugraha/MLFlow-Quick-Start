@@ -7,6 +7,7 @@
 ## install dependencies
     pip install mlflow
     pip install matplotlib
+    pip install jupyter
     pip install scikit-learn
     pip install xgboost
     pip install lightgbm
@@ -23,12 +24,9 @@ code examples:
 - XGBoost
 - LGBM
 - Tensorflow
-
-## run training scripts
-    python train_sklearn_autoML.py
-    python train_xgboost.py
-    python train_lgbm.py
-    python train_tensorflow.py
+commit:
+    git add *
+    git commit -m 'first commit'
     
 ## dashboard
 - open new terminal with the same environment and run the ui inside project directory
@@ -48,7 +46,15 @@ code examples:
   - example for local server
 
         http://127.0.0.1:5000
-        
-      ![ui_image](images/mlflow-autoML.png)
-      
-      ![ui_image](images/mlflow-gbt.png)
+
+## training
+- run scripts:
+           
+        python train_sklearn.py
+     ![ui_image](images/mlflow-autoML.png)
+    
+        python train_tensorflow.py
+
+- run notebook: 
+
+     ![ui_image](images/mlflow-gbt.png)
