@@ -1,0 +1,9 @@
+ mlflow
+ matplotlib
+ jupyter
+ scikit-learn
+ xgboost
+ lightgbm
+ tensorflow
+ future
+ tensorflow_datasets

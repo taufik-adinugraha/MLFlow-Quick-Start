@@ -10,8 +10,6 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.ensemble import BaggingClassifier
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.neural_network import MLPClassifier
-from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
 
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
@@ -43,8 +41,7 @@ x_train, x_val, y_train, y_val = train_test_split(x, y, test_size=0.2, random_st
 # list of models
 models = [LogisticRegression(), DecisionTreeClassifier(), KNeighborsClassifier(), GaussianProcessClassifier(), \
 GaussianNB(), SVC(), RandomForestClassifier(), AdaBoostClassifier(), GradientBoostingClassifier(), \
-BaggingClassifier(KNeighborsClassifier()), HistGradientBoostingClassifier(), MLPClassifier(), \
-XGBClassifier(), LGBMClassifier()]
+BaggingClassifier(KNeighborsClassifier()), HistGradientBoostingClassifier(), MLPClassifier()]
 
 # loop over model
 for model in models:
