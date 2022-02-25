@@ -54,3 +54,23 @@
      ![ui_image](images/mlflow-gbt.png)
 
 ## deployment
+- local REST API server
+
+        mlflow models serve -m /path_to_model/ -h X.X.X.X -p port_number
+    
+    example:
+    
+        mlflow models serve -m /path_to_model/ -h 0.0.0.0 -p 1234
+
+- docker
+    - build doker image
+    
+            mlflow models build-docker -m /path_to_model/ -n image_name 
+
+      example:
+      
+            mlflow models build-docker -m /path_to_model/ -n image_name 
+            
+    - run docker container
+
+            docker run -p 8080:8080 image_name
