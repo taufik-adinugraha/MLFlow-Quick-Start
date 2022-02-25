@@ -1,10 +1,15 @@
 # Quick Start
 
+## install packages
+- [anaconda](https://www.anaconda.com/products/individual)
+- [git](https://git-scm.com/download/)
+- [docker](https://www.docker.com/products/docker-desktop)
+
 ## setup environment
     conda create -n mlops python=3.7
     conda activate mlops
 
-## install dependencies
+## install python dependencies
     pip install -r requirements.txt
     pip install -f http://h2o-release.s3.amazonaws.com/h2o/latest_stable_Py.html h2o
 
@@ -15,10 +20,10 @@
 
 ## create training script
 - code examples:
-    - sklearn ([code](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_sklearn.py))
-    - tensorflow ()
-    - xgboost & lgbm ()
-    - autoML with h2o ()
+    - sklearn ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_sklearn.py))
+    - tensorflow ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_tensorflow.py))
+    - xgboost & lgbm ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_xgb_lgb.ipynb))
+    - autoML with h2o ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_h2o_automl.ipynb))
 - commit:
 
         git add *
@@ -26,14 +31,15 @@
     
 ## run MLflow server
 - open new terminal with the same environment and run the server
-     
-      mlflow server --backend-store-uri <URI>
-  where \<URI\> can either be a HTTP/HTTPS URI for a remote server, or a local path to log data to a directory  
-  - example:
+
+        mlflow server --backend-store-uri <URI> --default-artifact-root <URI> --host X.X.X.X --port 5000
   
+  where \<URI\> can either be a HTTP/HTTPS URI for a remote server, or a local path to log data to a directory  
+  example:
+    
         mlflow server --backend-store-uri ./myml --default-artifact-root ./myml --host 0.0.0.0 --port 5000
 
-- open the ui through web browser on `http://127.0.0.1:5000`
+- open the UI through web browser on `http://localhost:5000` or `http://X.X.X.X:5000`
 
 ## training
 - run scripts:
