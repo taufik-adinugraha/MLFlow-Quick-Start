@@ -13,7 +13,9 @@
     pip install lightgbm
     pip install tensorflow
     pip install future
+    pip install tensorflow_datasets
     pip install -f http://h2o-release.s3.amazonaws.com/h2o/latest_stable_Py.html h2o
+
 
 ## initiate project
     mkdir mlflow_quick
