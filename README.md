@@ -1,11 +1,14 @@
 # Quick Start
 
-## install packages
-- [anaconda](https://www.anaconda.com/products/individual)
-- [git](https://git-scm.com/download/)
-- [docker](https://www.docker.com/products/docker-desktop)
+## install packages (*optional*)
+- [anaconda](https://www.anaconda.com/products/individual) (environment manager)
+- [git](https://git-scm.com/download/) (version control)
+- [docker](https://www.docker.com/products/docker-desktop) (container manager)
+- [java](https://www.java.com/download/ie_manual.jsp) (required for running H2O)
 
 ## setup environment
+example:
+
     conda create -n mlops python=3.7
     conda activate mlops
 
@@ -23,35 +26,41 @@
     - sklearn ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_sklearn.py))
     - tensorflow ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_tensorflow.py))
     - xgboost & lgbm ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_xgb_lgb.ipynb))
-    - autoML with h2o ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_h2o_automl.ipynb))
+    - autoML with H2O ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_h2o_automl.ipynb))
 - commit:
 
         git add *
         git commit -m 'first commit'
     
 ## run MLflow server
-- open new terminal with the same environment and run the server
+- open new terminal/console with the same environment and run the server
 
-        mlflow server --backend-store-uri <URI> --default-artifact-root <URI> --host X.X.X.X --port 5000
+        mlflow server --backend-store-uri <URI> --default-artifact-root <URI> --host X.X.X.X --port port_number
   
-  where \<URI\> can either be a HTTP/HTTPS URI for a remote server, or a local path to log data to a directory  
-  example:
+  where \<URI\> can either be a HTTP/HTTPS URI for a remote server, or a local path to log data to a directory
+  
+  example when using local directory *myml*:
     
         mlflow server --backend-store-uri ./myml --default-artifact-root ./myml --host 0.0.0.0 --port 5000
 
 - open the UI through web browser on `http://localhost:5000` or `http://X.X.X.X:5000`
 
 ## training
-- run scripts:
+- run *train_sklearn.py*:
            
         python train_sklearn.py
      ![ui_image](images/mlflow-autoML.png)
-    
+
+- run *train_tensorflow.py*:
+
         python train_tensorflow.py
 
-- run notebooks: 
+- run *train_xgb_lgb.ipynb*: 
 
      ![ui_image](images/mlflow-gbt.png)
+
+- run *train_h2o_automl.ipynb*: 
+
 
 ## deployment
 - local REST API server
@@ -63,7 +72,7 @@
         mlflow models serve -m /path_to_model/ -h 0.0.0.0 -p 1234
 
 - docker
-    - build doker image
+    - build docker image
     
             mlflow models build-docker -m /path_to_model/ -n image_name 
 
