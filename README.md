@@ -38,7 +38,7 @@ code examples:
 
         mlflow server --backend-store-uri <URI> --default-artifact-root <URI> --host X.X.X.X --port port_number
   
-  where \<URI\> can either be a HTTP/HTTPS URI for a remote server, or a local path to log data to a directory
+  where \<URI\> can either be a URI for a remote server, or a local path to log data to a directory
   
   example when using local directory *myml*:
     
