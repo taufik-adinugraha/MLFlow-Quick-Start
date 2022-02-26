@@ -23,8 +23,8 @@ example:
 
 ## 1. MLflow Tracking
 ### create working directory
-    mkdir mlflow_quick
-    cd mlflow_quick
+    mkdir mlflow_tutorial
+    cd mlflow_tutorial
 
 ### create training script
 code examples:
