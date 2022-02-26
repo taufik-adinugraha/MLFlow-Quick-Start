@@ -1,4 +1,4 @@
-# Quick Start
+# Quick Tutorial
 
 <p align="center">
   <img src=images/mlflow-components.png alt="drawing" width="700"/>
