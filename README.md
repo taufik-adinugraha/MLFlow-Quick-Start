@@ -1,10 +1,16 @@
 # Quick Start
 
 <p align="center">
-  <img src=images/mlflow-components.png alt="drawing" width="500"/>
+  <img src=images/mlflow-components.png alt="drawing" width="700"/>
 </p>
 
-## Setup
+0. [Setup](#-quick-start)
+1. MLflow Tracking
+2. MLflow Projects
+3. MLflow Models
+4. MLflow Model Registry
+
+## 0. Setup
 ### optional packages
 - [anaconda](https://www.anaconda.com/products/individual) (environment manager)
 - [docker](https://www.docker.com/products/docker-desktop) (container manager)
