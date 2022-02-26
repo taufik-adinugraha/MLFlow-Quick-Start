@@ -22,6 +22,10 @@ example:
 
 
 ## 2. MLflow Tracking
+<p align="center">
+  <img src=images/mlflow-tracking.png alt="drawing" width="700"/>
+</p>
+
 ### create working directory
     mkdir mlflow_tutorial
     cd mlflow_tutorial
@@ -97,4 +101,8 @@ example:
     
     
 ## 5. MLflow Model Registry
+<p align="center">
+  <img src=images/mlflow-registry.png alt="drawing" width="700"/>
+</p>
+
 Not available in community version. [More info](https://www.mlflow.org/docs/latest/model-registry.html)
