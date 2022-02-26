@@ -4,12 +4,6 @@
   <img src=images/mlflow-components.png alt="drawing" width="700"/>
 </p>
 
-0. [Setup](##-0.-setup)
-1. [MLflow Tracking](##-1.-mlflow-tracking)
-2. [MLflow Projects](##-2.-mlflow-projects)
-3. [MLflow Models](##-3.-mlflow-models)
-4. [MLflow Model Registry](##-4.-mlflow-model-registry)
-
 ## 0. Setup
 ### optional packages
 - [anaconda](https://www.anaconda.com/products/individual) (environment manager)
