@@ -4,7 +4,7 @@
   <img src=images/mlflow-components.png alt="drawing" width="700"/>
 </p>
 
-## 0. Setup
+## 1. Setup
 ### optional packages
 - [anaconda](https://www.anaconda.com/products/individual) (environment manager)
 - [docker](https://www.docker.com/products/docker-desktop) (container manager)
@@ -21,7 +21,7 @@ example:
     pip install -f http://h2o-release.s3.amazonaws.com/h2o/latest_stable_Py.html h2o
 
 
-## 1. MLflow Tracking
+## 2. MLflow Tracking
 ### create working directory
     mkdir mlflow_tutorial
     cd mlflow_tutorial
@@ -62,9 +62,9 @@ code examples:
 
 - run *train_h2o_automl.ipynb*: 
 
-## 2. MLflow Projects
+## 3. MLflow Projects
 
-## 3. MLflow Models
+## 4. MLflow Models
 ### deployment
 - local REST API server
 
@@ -96,5 +96,5 @@ example:
     curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"columns":["alcohol", "chlorides", "citric acid", "density", "fixed acidity", "free sulfur dioxide", "pH", "residual sugar", "sulphates", "total sulfur dioxide", "volatile acidity"],"data":[[12.8, 0.029, 0.48, 0.98, 6.2, 29, 3.33, 1.2, 0.39, 75, 0.66]]}' http://127.0.0.1:1234/invocations
     
     
-## 4. MLflow Model Registry
+## 5. MLflow Model Registry
 Not available in community version. [More info](https://www.mlflow.org/docs/latest/model-registry.html)
