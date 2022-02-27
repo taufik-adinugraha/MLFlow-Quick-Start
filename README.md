@@ -1,5 +1,7 @@
 # Quick Tutorial
 
+https://www.slideshare.net/Hadoop_Summit/introducing-mlflow-an-open-source-platform-for-the-machine-learning-lifecycle-for-onprem-or-in-the-cloud
+
 <p align="center">
   <img src=images/mlflow-components.png alt="drawing" width="700"/>
 </p>
