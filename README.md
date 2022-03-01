@@ -7,6 +7,7 @@
 ## 1. Setup
 ### Optional Packages
 - [anaconda](https://www.anaconda.com/products/individual) (environment manager)
+- [git](https://git-scm.com/downloads) (version control)
 - [docker](https://www.docker.com/products/docker-desktop) (container manager)
 - [java](https://www.java.com/download/ie_manual.jsp) (required for running H2O)
 
@@ -15,6 +16,11 @@ example:
 
     conda create -n mlops python=3.7
     conda activate mlops
+
+### Download or Clone The Tutorial
+
+    git clone https://github.com/taufik-adinugraha/mlflow-tutorial.git
+    cd mlflow-tutorial
 
 ### Python Dependencies
     pip install -r requirements.txt
@@ -28,12 +34,7 @@ MLflow Tracking is an open-source API for live logging of parameters, metrics, a
   <img src=images/mlflow-tracking.png alt="drawing" width="500"/>
 </p>
 
-### Create Working Directory
-    mkdir mlflow_tutorial
-    cd mlflow_tutorial
-
-### Create Training Script
-code examples:
+### Training Scripts
 - sklearn ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_sklearn.py))
 - tensorflow ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_tensorflow.py))
 - xgboost & lgbm ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_xgb_lgb.ipynb))
@@ -88,7 +89,7 @@ An MLflow Project is a format for packaging data science code in a reusable and 
 
 ### Run Example:
 
-    mlflow run git@github.com:taufik-adinugraha/mlflow-run-example.git -P epoch=10 -P learning_rate=0.05
+    mlflow run https://github.com/taufik-adinugraha/mlflow-run-example.gitt -P epoch=10 -P learning_rate=0.05
 
 ## 4. MLflow Models
 An MLflow Model is a standard format for packaging machine learning models that can be used in a variety of downstream tools—for example, real-time serving through a REST API or batch inference on Apache Spark. The format defines a convention that lets you save a model in different “flavors” that can be understood by different downstream tools.
