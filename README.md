@@ -1,7 +1,5 @@
 # Quick Tutorial
 
-https://www.slideshare.net/Hadoop_Summit/introducing-mlflow-an-open-source-platform-for-the-machine-learning-lifecycle-for-onprem-or-in-the-cloud
-
 <p align="center">
   <img src=images/mlflow-components.png alt="drawing" width="700"/>
 </p>
@@ -84,13 +82,13 @@ An MLflow Project is a format for packaging data science code in a reusable and 
 </p>
 
 ### Main Components:
-- 'MLproject' file
-- script (.py or .sh) as an entry point
+- 'MLproject' config file
+- code or script as an entry point
 - data source
 
 ### Run Example:
 
-    mlflow run git@github.com:mlflow/mlflow-example.git -P alpha=0.5
+    mlflow run git@github.com:taufik-adinugraha/mlflow-run-example.git -P epoch=10 -P learning_rate=0.05
 
 ## 4. MLflow Models
 An MLflow Model is a standard format for packaging machine learning models that can be used in a variety of downstream tools—for example, real-time serving through a REST API or batch inference on Apache Spark. The format defines a convention that lets you save a model in different “flavors” that can be understood by different downstream tools.
