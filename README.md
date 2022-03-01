@@ -104,7 +104,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
     
     example:
     
-        mlflow models serve -m /path_to_model/ -h 0.0.0.0 -p 1234
+        mlflow models serve -m myml/3/649571fc79bd4fedb78378aa11a583d4/artifacts/model -h 0.0.0.0 -p 1234
 
 - Docker
     - build docker image
@@ -113,7 +113,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
 
       example:
       
-            mlflow models build-docker -m /path_to_model/ -n image_name 
+            mlflow models build-docker -m myml/3/649571fc79bd4fedb78378aa11a583d4/artifacts/model -n my_model 
             
     - run docker container
 
