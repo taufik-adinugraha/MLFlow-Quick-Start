@@ -1,7 +1,5 @@
 # Quick Tutorial
 
-https://www.slideshare.net/Hadoop_Summit/introducing-mlflow-an-open-source-platform-for-the-machine-learning-lifecycle-for-onprem-or-in-the-cloud
-
 <p align="center">
   <img src=images/mlflow-components.png alt="drawing" width="700"/>
 </p>
@@ -9,6 +7,7 @@ https://www.slideshare.net/Hadoop_Summit/introducing-mlflow-an-open-source-platf
 ## 1. Setup
 ### Optional Packages
 - [anaconda](https://www.anaconda.com/products/individual) (environment manager)
+- [git](https://git-scm.com/downloads) (version control)
 - [docker](https://www.docker.com/products/docker-desktop) (container manager)
 - [java](https://www.java.com/download/ie_manual.jsp) (required for running H2O)
 
@@ -17,6 +16,11 @@ example:
 
     conda create -n mlops python=3.7
     conda activate mlops
+
+### Download or Clone The Tutorial
+
+    git clone https://github.com/taufik-adinugraha/mlflow-tutorial.git
+    cd mlflow-tutorial
 
 ### Python Dependencies
     pip install -r requirements.txt
@@ -30,12 +34,7 @@ MLflow Tracking is an open-source API for live logging of parameters, metrics, a
   <img src=images/mlflow-tracking.png alt="drawing" width="500"/>
 </p>
 
-### Create Working Directory
-    mkdir mlflow_tutorial
-    cd mlflow_tutorial
-
-### Create Training Script
-code examples:
+### Training Scripts
 - sklearn ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_sklearn.py))
 - tensorflow ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_tensorflow.py))
 - xgboost & lgbm ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_xgb_lgb.ipynb))
@@ -84,13 +83,13 @@ An MLflow Project is a format for packaging data science code in a reusable and 
 </p>
 
 ### Main Components:
-- 'MLproject' file
-- script (.py or .sh) as an entry point
+- 'MLproject' config file
+- code or script as an entry point
 - data source
 
 ### Run Example:
 
-    mlflow run git@github.com:mlflow/mlflow-example.git -P alpha=0.5
+    mlflow run https://github.com/taufik-adinugraha/mlflow-run-example.gitt -P epoch=10 -P learning_rate=0.05
 
 ## 4. MLflow Models
 An MLflow Model is a standard format for packaging machine learning models that can be used in a variety of downstream tools—for example, real-time serving through a REST API or batch inference on Apache Spark. The format defines a convention that lets you save a model in different “flavors” that can be understood by different downstream tools.
@@ -106,7 +105,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
     
     example:
     
-        mlflow models serve -m /path_to_model/ -h 0.0.0.0 -p 1234
+        mlflow models serve -m myml/3/649571fc79bd4fedb78378aa11a583d4/artifacts/model -h 0.0.0.0 -p 1234
 
 - Docker
     - build docker image
@@ -115,7 +114,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
 
       example:
       
-            mlflow models build-docker -m /path_to_model/ -n image_name 
+            mlflow models build-docker -m myml/3/649571fc79bd4fedb78378aa11a583d4/artifacts/model -n my_model 
             
     - run docker container
 
@@ -127,7 +126,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
 
 example:
 
-    curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"columns":["alcohol", "chlorides", "citric acid", "density", "fixed acidity", "free sulfur dioxide", "pH", "residual sugar", "sulphates", "total sulfur dioxide", "volatile acidity"],"data":[[12.8, 0.029, 0.48, 0.98, 6.2, 29, 3.33, 1.2, 0.39, 75, 0.66]]}' http://127.0.0.1:1234/invocations
+    curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"columns":["sepal length", "sepal width", "petal length", "petal width"],"data":[[5.1, 3.5, 1.4, 0.2]]}' http://localhost:1234/invocations
     
     
 ## 5. MLflow Model Registry
