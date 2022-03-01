@@ -125,7 +125,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
 
 example:
 
-    curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"columns":["sepal length", "sepal width", "petal length", "petal width"],"data":[5.1, 3.5, 1.4, 0.2]}' http://127.0.0.1:1234/invocations
+    curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"columns":["sepal length", "sepal width", "petal length", "petal width"],"data":[[5.1, 3.5, 1.4, 0.2]]}' http://localhost:1234/invocations
     
     
 ## 5. MLflow Model Registry
