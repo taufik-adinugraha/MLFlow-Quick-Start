@@ -7,18 +7,18 @@ https://www.slideshare.net/Hadoop_Summit/introducing-mlflow-an-open-source-platf
 </p>
 
 ## 1. Setup
-### optional packages
+### Optional Packages
 - [anaconda](https://www.anaconda.com/products/individual) (environment manager)
 - [docker](https://www.docker.com/products/docker-desktop) (container manager)
 - [java](https://www.java.com/download/ie_manual.jsp) (required for running H2O)
 
-### environment
+### Environment
 example:
 
     conda create -n mlops python=3.7
     conda activate mlops
 
-### python dependencies
+### Python Dependencies
     pip install -r requirements.txt
     pip install -f http://h2o-release.s3.amazonaws.com/h2o/latest_stable_Py.html h2o
 
@@ -30,18 +30,18 @@ MLflow Tracking is an open-source API for live logging of parameters, metrics, a
   <img src=images/mlflow-tracking.png alt="drawing" width="500"/>
 </p>
 
-### create working directory
+### Create Working Directory
     mkdir mlflow_tutorial
     cd mlflow_tutorial
 
-### create training script
+### Create Training Script
 code examples:
 - sklearn ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_sklearn.py))
 - tensorflow ([script](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_tensorflow.py))
 - xgboost & lgbm ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_xgb_lgb.ipynb))
 - autoML with H2O ([notebook](https://github.com/taufik-adinugraha/mlflow-quick-start/blob/main/train_h2o_automl.ipynb))
     
-### run MLflow server
+### Run MLflow Server
 - open new terminal/console with the same environment and run the server
 
         mlflow server --backend-store-uri <URI> --default-artifact-root <URI> --host X.X.X.X --port port_number
@@ -54,7 +54,7 @@ code examples:
 
 - open the UI through web browser on `http://localhost:5000` or `http://X.X.X.X:5000`
 
-### training
+### Training
 - run *train_sklearn.py*:
            
         python train_sklearn.py
@@ -83,12 +83,12 @@ An MLflow Project is a format for packaging data science code in a reusable and 
   <img src=images/mlflow-projects.png alt="drawing" width="500"/>
 </p>
 
-Main components:
+### Main Components:
 - 'MLproject' file
 - script (.py or .sh) as an entry point
 - data source
 
-Run Example:
+### Run Example:
 
     mlflow run git@github.com:mlflow/mlflow-example.git -P alpha=0.5
 
@@ -99,8 +99,8 @@ An MLflow Model is a standard format for packaging machine learning models that 
   <img src=images/mlflow-models.png alt="drawing" width="500"/>
 </p>
 
-### model deployment
-- local REST API server
+### Model Deployment
+- Local REST API Server
 
         mlflow models serve -m /path_to_model/ -h X.X.X.X -p port_number
     
@@ -108,7 +108,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
     
         mlflow models serve -m /path_to_model/ -h 0.0.0.0 -p 1234
 
-- docker
+- Docker
     - build docker image
     
             mlflow models build-docker -m /path_to_model/ -n image_name 
@@ -121,7 +121,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
 
             docker run -p 8080:8080 image_name
 
-### test the endpoint
+### Test The Endpoint
 
     curl -X POST -H "Content-Type:application/json; format=pandas-split" --data json_data http://X.X.X.X:portnumber/invocations
 
