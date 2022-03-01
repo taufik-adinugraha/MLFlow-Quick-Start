@@ -52,7 +52,7 @@ model = tf.keras.models.Sequential([
   tf.keras.layers.Dense(10)
 ])
 model.compile(
-    optimizer=tf.keras.optimizers.Adam(0.001),
+    optimizer=tf.keras.optimizers.Adam(learning_rate=0.1),
     loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
     metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
 )
