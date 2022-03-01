@@ -69,8 +69,15 @@ code examples:
 - run *train_h2o_automl.ipynb*: 
 
 ## 3. MLflow Projects
+<p align="center">
+  <img src=images/mlflow-projects.png alt="drawing" width="700"/>
+</p>
 
 ## 4. MLflow Models
+<p align="center">
+  <img src=images/mlflow-models.png alt="drawing" width="700"/>
+</p>
+
 ### deployment
 - local REST API server
 
@@ -104,7 +111,7 @@ example:
     
 ## 5. MLflow Model Registry
 <p align="center">
-  <img src=images/mlflow-registry.png alt="drawing" width="700"/>
+  <img src=images/mlflow-registry.jpeg alt="drawing" width="700"/>
 </p>
 
 Not available in community version. [More info](https://www.mlflow.org/docs/latest/model-registry.html)
