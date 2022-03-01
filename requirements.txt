@@ -6,4 +6,4 @@
  lightgbm
  tensorflow
  future
- tensorflow_datasets
+ tensorflow-datasets
