@@ -1,4 +1,4 @@
-# Quick Tutorial
+# MLflow Tutorial
 
 <p align="center">
   <img src=images/mlflow-components.png alt="drawing" width="700"/>
@@ -6,10 +6,10 @@
 
 ## 1. Setup
 ### Optional Packages
-- [anaconda](https://www.anaconda.com/products/individual) (environment manager)
-- [git](https://git-scm.com/downloads) (version control)
-- [docker](https://www.docker.com/products/docker-desktop) (container manager)
-- [java](https://www.java.com/download/ie_manual.jsp) (required for running H2O)
+- [Anaconda](https://www.anaconda.com/products/individual) (environment manager)
+- [Git](https://git-scm.com/downloads) (version control)
+- [Docker](https://www.docker.com/products/docker-desktop) (container manager)
+- [Java](https://www.java.com/download/ie_manual.jsp) (required for running H2O)
 
 ### Environment
 example:
