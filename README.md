@@ -45,7 +45,7 @@ MLflow Tracking is an open-source API for live logging of parameters, metrics, a
 
         mlflow server --backend-store-uri <URI> --default-artifact-root <URI> --host X.X.X.X --port port_number
   
-  where \<URI\> can either be a URI for a remote server, or a local path to log data to a directory
+  where \<URI\> can either be a database server, or a local path to log data to a directory.
   
   example when using local directory *myml*:
     
@@ -54,23 +54,23 @@ MLflow Tracking is an open-source API for live logging of parameters, metrics, a
 - open the UI through web browser on `http://localhost:5000` or `http://X.X.X.X:5000`
 
 ### Training
-- run *train_sklearn.py*:
+- run ***train_sklearn.py***:
            
         python train_sklearn.py
      ![sklearn](images/mlflow-sklearn.png)
 
-- run *train_tensorflow.py*:
+- run ***train_tensorflow.py***:
 
         python train_tensorflow.py
      ![sklearn](images/mlflow-tensorflow.png)
      ![sklearn](images/mlflow-tensorflow-architecture.png)
      ![sklearn](images/mlflow-tensorflow-metrics.png)
 
-- run *train_xgb_lgb.ipynb*: 
+- run ***train_xgb_lgb.ipynb***: 
 
      ![xgblgb](images/mlflow-gbt.png)
 
-- run *train_h2o_automl.ipynb* (only save the best model): 
+- run ***train_h2o_automl.ipynb*** (only save the best model): 
 
      ![sklearn](images/mlflow-h2o_autoML.png)
      ![sklearn](images/h2o_autoML_leaderboard.png)
@@ -83,13 +83,14 @@ An MLflow Project is a format for packaging data science code in a reusable and 
 </p>
 
 ### Main Components:
-- 'MLproject' config file
-- code or script as an entry point
-- data source
+- 'MLproject' config file [(example)](https://github.com/taufik-adinugraha/mlflow-run-example/blob/main/conda.yaml)
+- code or script as an entry point [(example)](https://github.com/taufik-adinugraha/mlflow-run-example/blob/main/train_tensorflow.py)
+- data source (csv or another source)
 
 ### Run Example:
-
-    mlflow run https://github.com/taufik-adinugraha/mlflow-run-example.gitt -P epoch=10 -P learning_rate=0.05
+    
+    export MLFLOW_TRACKING_URI='/home/mlflow-user/mlflow-run-example/myml'
+    mlflow run https://github.com/taufik-adinugraha/mlflow-run-example.git --version=main --experiment-name=MNIST -P epochs=9 -P learning_rate=0.025
 
 ## 4. MLflow Models
 An MLflow Model is a standard format for packaging machine learning models that can be used in a variety of downstream tools—for example, real-time serving through a REST API or batch inference on Apache Spark. The format defines a convention that lets you save a model in different “flavors” that can be understood by different downstream tools.
@@ -99,7 +100,7 @@ An MLflow Model is a standard format for packaging machine learning models that 
 </p>
 
 ### Model Deployment
-- Local REST API Server
+- REST API Server
 
         mlflow models serve -m /path_to_model/ -h X.X.X.X -p port_number
     
@@ -127,6 +128,10 @@ An MLflow Model is a standard format for packaging machine learning models that 
 example:
 
     curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"columns":["sepal length", "sepal width", "petal length", "petal width"],"data":[[5.1, 3.5, 1.4, 0.2]]}' http://localhost:1234/invocations
+    
+the response should be similar to this:
+
+    [[0.9854555235937683, 0.009577244786833805, 0.004967231619397863]]
     
     
 ## 5. MLflow Model Registry
